@@ -3,7 +3,6 @@ import taxes.IncomeMinusExpensesTaxSystem;
 
 public class Main {
     public static void main(String[] args) {
-        // Создаем компанию с системой "УСН доходы"
         System.out.println("--- Тестирование \"УСН доходы\" ---");
         Company company = new Company("ООО \"Ромашка\"", new IncomeTaxSystem());
         company.shiftMoney(1000); // Доход
@@ -11,7 +10,6 @@ public class Main {
         company.payTaxes(); // Налог: 1000 * 0.06 = 60 руб.
 
         System.out.println("\n--- Смена налоговой системы на \"УСН доходы минус расходы\" ---");
-        // Меняем систему налогообложения на "УСН доходы минус расходы"
         company.setTaxSystem(new IncomeMinusExpensesTaxSystem());
         company.shiftMoney(1000); // Доход
         company.shiftMoney(-200); // Расход
