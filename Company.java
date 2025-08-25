@@ -24,8 +24,6 @@ public class Company {
     }
 
     public void payTaxes() {
-        // Полиморфный вызов: calcTaxFor() будет использовать логику
-        // конкретного объекта taxSystem (УСН доходы или УСН доходы-расходы)
         int taxAmount = taxSystem.calcTaxFor(debit, credit);
         System.out.printf("Компания %s уплатила налог в размере: %d руб.\n", this.title, taxAmount);
         this.debit = 0;
